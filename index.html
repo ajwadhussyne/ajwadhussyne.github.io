@@ -1,672 +1,832 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ajwad Tazrif Hussyne | Portfolio</title>
-  <meta
-    name="description"
-    content="Portfolio website for Ajwad Tazrif Hussyne - Electrical Engineering student focused on embedded systems, power systems, instrumentation, FPGA hardware, and hands-on engineering projects."
-  />
-  <style>
-    :root {
-      --bg: #0b1020;
-      --bg-soft: #121933;
-      --card: #151d3b;
-      --text: #e8ecf8;
-      --muted: #a7b0cc;
-      --line: rgba(255,255,255,0.08);
-      --accent: #7aa2ff;
-      --accent-2: #8ef0d0;
-      --max-width: 1100px;
-      --radius: 18px;
-      --shadow: 0 20px 50px rgba(0,0,0,0.25);
-    }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(122,162,255,0.14), transparent 28%),
-        radial-gradient(circle at top right, rgba(142,240,208,0.10), transparent 25%),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+<title>Ajwad Tazrif Hussyne | Electrical Engineering Portfolio</title>
 
-    .container {
-      width: min(var(--max-width), calc(100% - 2rem));
-      margin: 0 auto;
-    }
+<meta
+name="description"
+content="Ajwad Tazrif Hussyne - Electrical Engineering student at University of Calgary focused on embedded systems, FPGA development, power systems, instrumentation and renewable energy."
+>
 
-    .section {
-      padding: 5rem 0;
-    }
+<style>
 
-    .section-title {
-      font-size: clamp(1.8rem, 2vw, 2.5rem);
-      margin: 0 0 0.75rem;
-    }
+:root{
 
-    .section-subtitle {
-      margin: 0 0 2rem;
-      color: var(--muted);
-      max-width: 760px;
-    }
+--bg:#0b1020;
+--card:#151d3b;
+--text:#e8ecf8;
+--muted:#a7b0cc;
+--accent:#7aa2ff;
+--accent2:#8ef0d0;
+--line:rgba(255,255,255,0.08);
+--radius:18px;
+--shadow:0 18px 45px rgba(0,0,0,0.25);
+--width:1100px;
 
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(12px);
-      background: rgba(11, 16, 32, 0.82);
-      border-bottom: 1px solid var(--line);
-    }
+}
 
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1rem 0;
-    }
+*{
 
-    .brand {
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      white-space: nowrap;
-    }
+box-sizing:border-box;
 
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
+}
 
-    .nav-links a {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
+body{
 
-    .nav-links a:hover,
-    .nav-links a:focus {
-      color: var(--text);
-    }
+margin:0;
 
-    .hero {
-      padding: 6rem 0 4rem;
-    }
+font-family:
+Inter,
+Segoe UI,
+sans-serif;
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 0.95fr;
-      gap: 2rem;
-      align-items: center;
-    }
+background:
 
-    .eyebrow {
-      display: inline-block;
-      padding: 0.35rem 0.7rem;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--accent-2);
-      background: rgba(255,255,255,0.03);
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
+radial-gradient(
+circle at top left,
+rgba(122,162,255,0.14),
+transparent 28%
+),
 
-    .hero h1 {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      line-height: 1.05;
-      margin: 0 0 1rem;
-    }
+#0b1020;
 
-    .hero p {
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 760px;
-      margin: 0 0 1.5rem;
-    }
+color:var(--text);
 
-    .hero-card,
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
+line-height:1.6;
 
-    .hero-card {
-      padding: 1.5rem;
-    }
+}
 
-    .hero-photo {
-      aspect-ratio: 1 / 1;
-      border-radius: 14px;
-      overflow: hidden;
-      background:
-        linear-gradient(135deg, rgba(122,162,255,0.25), rgba(142,240,208,0.10)),
-        #1b2447;
-      border: 1px dashed rgba(255,255,255,0.22);
-      margin-bottom: 1rem;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 1rem;
-      color: var(--muted);
-    }
+html{
 
-    .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+scroll-behavior:smooth;
 
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.75rem;
-    }
+}
 
-    .stat {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 0.9rem;
-    }
+.container{
 
-    .stat strong {
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 0.25rem;
-    }
+width:min(
+var(--width),
+calc(100%-2rem)
+);
 
-    .stat span {
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
+margin:auto;
 
-    .button-row {
-      display: flex;
-      gap: 0.9rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
+padding:0 1rem;
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.9rem 1.15rem;
-      border-radius: 12px;
-      border: 1px solid transparent;
-      font-weight: 600;
-      transition: 0.2s ease;
-    }
+}
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #90b3ff);
-      color: #08101f;
-    }
+.nav{
 
-    .btn-secondary {
-      background: transparent;
-      border-color: var(--line);
-      color: var(--text);
-    }
+position:sticky;
 
-    .btn:hover {
-      transform: translateY(-1px);
-      opacity: 0.96;
-    }
+top:0;
 
-    .about-grid,
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 1.5rem;
-    }
+background:
 
-    .card {
-      padding: 1.5rem;
-    }
+rgba(
+11,
+16,
+32,
+0.9
+);
 
-    .muted {
-      color: var(--muted);
-    }
+backdrop-filter:blur(10px);
 
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      margin-top: 1rem;
-    }
+border-bottom:
 
-    .chip {
-      padding: 0.55rem 0.8rem;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--line);
-      color: var(--text);
-      font-size: 0.9rem;
-    }
+1px solid var(--line);
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 1.25rem;
-    }
+z-index:100;
 
-    .project-card {
-      overflow: hidden;
-    }
+}
 
-    .project-thumb {
-      height: 200px;
-      background:
-        linear-gradient(135deg, rgba(122,162,255,0.35), rgba(142,240,208,0.12)),
-        #1a2245;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      color: var(--muted);
-      margin-bottom: 1rem;
-      border: 1px dashed rgba(255,255,255,0.15);
-      text-align: center;
-      padding: 1rem;
-      font-weight: 600;
-    }
+.nav-inner{
 
-    .project-meta {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin: 0.75rem 0 1rem;
-    }
+display:flex;
 
-    .project-links {
-      display: flex;
-      gap: 0.85rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
+justify-content:
 
-    .timeline {
-      display: grid;
-      gap: 1rem;
-    }
+space-between;
 
-    .timeline-item {
-      padding-left: 1rem;
-      border-left: 2px solid rgba(122,162,255,0.45);
-    }
+align-items:center;
 
-    .timeline-item h3 {
-      margin: 0 0 0.3rem;
-      font-size: 1.05rem;
-    }
+padding:1rem 0;
 
-    .timeline-item p {
-      margin: 0.25rem 0 0;
-      color: var(--muted);
-    }
+}
 
-    .contact-list {
-      display: grid;
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
+.brand{
 
-    .contact-item {
-      padding: 0.9rem 1rem;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      background: rgba(255,255,255,0.03);
-      word-break: break-word;
-    }
+font-weight:700;
 
-    footer {
-      padding: 2rem 0 3rem;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      text-align: center;
-    }
+font-size:1.1rem;
 
-    @media (max-width: 900px) {
-      .hero-grid,
-      .about-grid,
-      .contact-grid,
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
+}
 
-      .hero {
-        padding-top: 4.5rem;
-      }
-    }
+.nav-links{
 
-    @media (max-width: 640px) {
-      .nav-inner {
-        align-items: flex-start;
-        flex-direction: column;
-      }
+display:flex;
 
-      .hero-stats {
-        grid-template-columns: 1fr;
-      }
+gap:1.2rem;
 
-      .section {
-        padding: 4rem 0;
-      }
-    }
-  </style>
+}
+
+.nav-links a{
+
+color:var(--muted);
+
+text-decoration:none;
+
+}
+
+.nav-links a:hover{
+
+color:white;
+
+}
+
+.hero{
+
+padding:
+
+5rem 0 3rem;
+
+}
+
+.hero-grid{
+
+display:grid;
+
+grid-template-columns:
+
+1.2fr .8fr;
+
+gap:2rem;
+
+align-items:center;
+
+}
+
+.eyebrow{
+
+display:inline-block;
+
+padding:
+
+0.4rem 0.8rem;
+
+border-radius:999px;
+
+border:
+
+1px solid var(--line);
+
+color:
+
+var(--accent2);
+
+margin-bottom:1rem;
+
+font-size:0.9rem;
+
+}
+
+.hero h1{
+
+font-size:
+
+clamp(
+2.5rem,
+4vw,
+3.5rem
+);
+
+margin-bottom:
+
+0.4rem;
+
+line-height:1.1;
+
+}
+
+.hero-sub{
+
+color:
+
+var(--accent2);
+
+font-weight:600;
+
+margin-bottom:
+
+1rem;
+
+}
+
+.hero p{
+
+color:
+
+var(--muted);
+
+max-width:
+
+600px;
+
+}
+
+.button-row{
+
+display:flex;
+
+gap:1rem;
+
+flex-wrap:wrap;
+
+margin-top:1.5rem;
+
+}
+
+.btn{
+
+padding:
+
+0.85rem 1.2rem;
+
+border-radius:12px;
+
+font-weight:600;
+
+text-decoration:none;
+
+border:
+
+1px solid var(--line);
+
+color:white;
+
+}
+
+.btn-primary{
+
+background:
+
+linear-gradient(
+
+135deg,
+
+var(--accent),
+
+#90b3ff
+
+);
+
+color:#08101f;
+
+border:none;
+
+}
+
+.hero-card{
+
+background:
+
+linear-gradient(
+
+180deg,
+
+rgba(255,255,255,.05),
+
+rgba(255,255,255,.02)
+
+);
+
+border:
+
+1px solid var(--line);
+
+border-radius:
+
+var(--radius);
+
+padding:1.5rem;
+
+box-shadow:
+
+var(--shadow);
+
+}
+
+.hero-photo{
+
+aspect-ratio:1;
+
+border-radius:16px;
+
+overflow:hidden;
+
+margin-bottom:1rem;
+
+background:#1b2447;
+
+}
+
+.hero-photo img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+.hero-stats{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(3,1fr);
+
+gap:.7rem;
+
+}
+
+.stat{
+
+padding:1rem;
+
+border:
+
+1px solid var(--line);
+
+border-radius:14px;
+
+text-align:center;
+
+}
+
+.stat strong{
+
+display:block;
+
+font-size:1.2rem;
+
+}
+
+.section{
+
+padding:5rem 0;
+
+}
+
+.section-title{
+
+font-size:2rem;
+
+margin-bottom:1rem;
+
+}
+
+.card{
+
+background:
+
+rgba(255,255,255,.03);
+
+border:
+
+1px solid var(--line);
+
+padding:1.5rem;
+
+border-radius:
+
+var(--radius);
+
+}
+
+.skills{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:.7rem;
+
+}
+
+.skill{
+
+padding:
+
+.55rem .9rem;
+
+border-radius:999px;
+
+background:
+
+rgba(255,255,255,.05);
+
+}
+
+.projects{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+gap:1.5rem;
+
+}
+
+.project{
+
+padding:1.5rem;
+
+background:
+
+rgba(255,255,255,.03);
+
+border:
+
+1px solid var(--line);
+
+border-radius:
+
+var(--radius);
+
+}
+
+footer{
+
+padding:2rem;
+
+text-align:center;
+
+color:var(--muted);
+
+border-top:
+
+1px solid var(--line);
+
+}
+
+@media(max-width:900px){
+
+.hero-grid,
+.projects{
+
+grid-template-columns:1fr;
+
+}
+
+.hero-stats{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a href="#top" class="brand">Ajwad Tazrif Hussyne</a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
 
-  <header class="hero" id="top">
-    <div class="container hero-grid">
-      <div>
-        <span class="eyebrow">Electrical Engineering Student • Open to Internship & Co-op Opportunities</span>
-        <h1>Building hands-on electrical systems across embedded control, power systems, FPGA hardware, and instrumentation.</h1>
-        <p>
-          I am an Electrical Engineering student at the University of Calgary with practical experience in electrical testing,
-          troubleshooting, embedded systems, FPGA-based hardware, power system design, and engineering documentation. I enjoy
-          working on projects where hardware, software, measurement, and real-world validation come together.
-        </p>
-        <div class="button-row">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="resume.pdf" class="btn btn-secondary" target="_blank" rel="noreferrer">Download Resume</a>
-          <a href="https://github.com/yourusername" class="btn btn-secondary" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/ajwad-tazrif-hussyne-9a09171b9/" class="btn btn-secondary" target="_blank" rel="noreferrer">LinkedIn</a>
-        </div>
-      </div>
+<nav class="nav">
 
-      <div class="hero-card">
-        <div class="hero-photo">
-          Add your headshot here<br />
-          <small>images/headshot.jpg</small>
-        </div>
-        <div class="hero-stats">
-          <div class="stat">
-            <strong>2028</strong>
-            <span>Expected Graduation</span>
-          </div>
-          <div class="stat">
-            <strong>1500+</strong>
-            <span>Students Reached</span>
-          </div>
-          <div class="stat">
-            <strong>4+</strong>
-            <span>Engineering Projects</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
+<div class="container nav-inner">
 
-  <main>
-    <section class="section" id="about">
-      <div class="container about-grid">
-        <div class="card">
-          <h2 class="section-title">About Me</h2>
-          <p class="muted">
-            I am a BSc Electrical Engineering student at the University of Calgary, expected to graduate in April 2028.
-            My interests include embedded systems, instrumentation, power systems, field services, electrical testing,
-            commissioning, maintenance, and practical engineering work.
-          </p>
-          <p class="muted">
-            Through academic projects and outreach experience, I have worked with sensors, servo motors, FPGA hardware,
-            oscilloscopes, simulation tools, solar PV system design, troubleshooting, calibration, documentation, and
-            hands-on workshop delivery. I am currently looking for internship or co-op opportunities where I can keep
-            developing as a future electrical engineer.
-          </p>
-        </div>
+<div class="brand">
 
-        <div class="card">
-          <h2 class="section-title">Core Skills</h2>
-          <p class="section-subtitle">Technical areas I am building through coursework, projects, labs, and hands-on work.</p>
-          <div class="skills">
-            <span class="chip">Electrical Testing</span>
-            <span class="chip">Troubleshooting</span>
-            <span class="chip">Oscilloscopes</span>
-            <span class="chip">Instrumentation</span>
-            <span class="chip">Embedded Systems</span>
-            <span class="chip">FPGA Hardware</span>
-            <span class="chip">SystemVerilog</span>
-            <span class="chip">C/C++</span>
-            <span class="chip">MATLAB</span>
-            <span class="chip">Xilinx Vivado</span>
-            <span class="chip">LTspice</span>
-            <span class="chip">NI Multisim</span>
-            <span class="chip">PVsyst</span>
-            <span class="chip">AutoCAD</span>
-            <span class="chip">Fusion 360</span>
-            <span class="chip">Microsoft Excel</span>
-            <span class="chip">Engineering Documentation</span>
-            <span class="chip">Safety Awareness</span>
-          </div>
-        </div>
-      </div>
-    </section>
+Ajwad Tazrif Hussyne
 
-    <section class="section" id="projects">
-      <div class="container">
-        <h2 class="section-title">Selected Projects</h2>
-        <p class="section-subtitle">
-          These project summaries are based on my current resume. Each project can later be expanded with images, demo videos,
-          schematics, scope captures, reports, GitHub repositories, and technical case-study pages.
-        </p>
+</div>
 
-        <div class="projects-grid">
-          <article class="card project-card">
-            <div class="project-thumb">Dual-Axis Solar Tracker<br />Sensors + Servos + Embedded Control</div>
-            <h3>Dual-Axis Solar Tracker Using LDR Sensors and Servo Motors</h3>
-            <p class="muted">
-              Developed an Arduino-based solar tracking system integrating LDR sensors, servo motors, embedded control logic,
-              and electrical wiring. Conducted repeated testing, troubleshooting, calibration, and validation under varying
-              operating conditions while supporting mechanical integration and documentation.
-            </p>
-            <div class="project-meta">
-              <span class="chip">Arduino</span>
-              <span class="chip">LDR Sensors</span>
-              <span class="chip">Servo Motors</span>
-              <span class="chip">Fusion 360</span>
-              <span class="chip">Testing</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-secondary">Add GitHub</a>
-              <a href="#" class="btn btn-secondary">Add Demo</a>
-            </div>
-          </article>
+<div class="nav-links">
 
-          <article class="card project-card">
-            <div class="project-thumb">6.3 kWp Solar PV System<br />PVsyst + Engineering Calculations</div>
-            <h3>Grid-Connected Solar PV System Design</h3>
-            <p class="muted">
-              Designed and simulated a residential grid-connected solar PV system using PVsyst and engineering calculations.
-              Evaluated inverter sizing, module configuration, system performance, and design tradeoffs to support technical
-              decision-making for a 6.3 kWp system.
-            </p>
-            <div class="project-meta">
-              <span class="chip">PVsyst</span>
-              <span class="chip">Power Systems</span>
-              <span class="chip">Inverter Sizing</span>
-              <span class="chip">PV Design</span>
-              <span class="chip">Documentation</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-secondary">Add Report</a>
-              <a href="#" class="btn btn-secondary">Add Case Study</a>
-            </div>
-          </article>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
 
-          <article class="card project-card">
-            <div class="project-thumb">Discrete ADC on FPGA<br />PWM + R2R DAC + SAR Logic</div>
-            <h3>Discrete ADC Design Using FPGA</h3>
-            <p class="muted">
-              Designed and implemented an FPGA-based analog-to-digital conversion system integrating PWM generation,
-              comparator interfacing, R2R DAC behavior, and SAR logic. Performed electrical testing, waveform analysis,
-              signal validation, troubleshooting, and engineering documentation using oscilloscopes and lab equipment.
-            </p>
-            <div class="project-meta">
-              <span class="chip">SystemVerilog</span>
-              <span class="chip">Basys 3 FPGA</span>
-              <span class="chip">Oscilloscope</span>
-              <span class="chip">SAR Logic</span>
-              <span class="chip">Hardware Testing</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-secondary">Add GitHub</a>
-              <a href="#" class="btn btn-secondary">Add Scope Captures</a>
-            </div>
-          </article>
+</div>
 
-          <article class="card project-card">
-            <div class="project-thumb">Obstacle Detection<br />Sensors + Controller + Actuator Logic</div>
-            <h3>Embedded Control System with Obstacle Detection</h3>
-            <p class="muted">
-              Integrated ultrasonic sensors, embedded controllers, and actuator logic within an electromechanical system.
-              Conducted system troubleshooting, signal verification, and corrective debugging to improve operational
-              reliability and system response.
-            </p>
-            <div class="project-meta">
-              <span class="chip">Embedded Systems</span>
-              <span class="chip">Ultrasonic Sensors</span>
-              <span class="chip">Actuator Logic</span>
-              <span class="chip">Debugging</span>
-              <span class="chip">Reliability</span>
-            </div>
-            <div class="project-links">
-              <a href="#" class="btn btn-secondary">Add Code</a>
-              <a href="#" class="btn btn-secondary">Add Demo Video</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+</div>
 
-    <section class="section" id="experience">
-      <div class="container about-grid">
-        <div class="card">
-          <h2 class="section-title">Experience</h2>
-          <div class="timeline">
-            <div class="timeline-item">
-              <h3>Program Assistant — SHAD Canada, University of Calgary</h3>
-              <span class="muted">June 2025 – July 2025</span>
-              <p>
-                Supported hands-on engineering workshops involving equipment setup, troubleshooting, monitoring, technical
-                coordination, documentation, and operational logistics in a fast-paced team environment.
-              </p>
-            </div>
+</nav>
 
-            <div class="timeline-item">
-              <h3>Math Instructor — Mathnasium</h3>
-              <span class="muted">January 2024 – October 2024</span>
-              <p>
-                Built analytical, problem-solving, and communication skills through technical instruction, student support,
-                and performance analysis.
-              </p>
-            </div>
+<header class="hero">
 
-            <div class="timeline-item">
-              <h3>AASEE Finance Team — University of Calgary</h3>
-              <span class="muted">September 2025 – Present</span>
-              <p>
-                Manage budgeting records, sponsorship applications, expense tracking, outreach planning, and financial
-                coordination for STEM outreach activities and events.
-              </p>
-            </div>
+<div class="container hero-grid">
 
-            <div class="timeline-item">
-              <h3>STEM Learning Facilitator — AASEE</h3>
-              <span class="muted">April 2025 – Present</span>
-              <p>
-                Deliver hands-on STEM workshops and engineering demonstrations to 1500+ students across schools and outreach
-                events, while supporting technical setup, troubleshooting, and activity coordination.
-              </p>
-            </div>
-          </div>
-        </div>
+<div>
 
-        <div class="card">
-          <h2 class="section-title">Education</h2>
-          <p><strong>University of Calgary, Schulich School of Engineering</strong></p>
-          <p class="muted">Bachelor of Science in Electrical Engineering</p>
-          <p class="muted">Expected Graduation: April 2028</p>
-          <p class="muted">
-            Relevant Coursework: Power Systems, Instrumentation Systems, Control Systems, Analog and Digital Circuits,
-            Embedded Systems, Signals and Systems, Engineering Design.
-          </p>
-          <div class="skills">
-            <span class="chip">Power Systems</span>
-            <span class="chip">Control Systems</span>
-            <span class="chip">Instrumentation</span>
-            <span class="chip">Embedded Systems</span>
-            <span class="chip">Analog & Digital Circuits</span>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="eyebrow">
 
-    <section class="section" id="contact">
-      <div class="container contact-grid">
-        <div class="card">
-          <h2 class="section-title">Contact</h2>
-          <p class="muted">
-            I am open to internship, co-op, and early-career opportunities in electrical engineering, power systems,
-            embedded systems, instrumentation, field services, testing, and troubleshooting.
-          </p>
-          <div class="contact-list">
-            <div class="contact-item"><strong>Email:</strong> hussynea@gmail.com</div>
-            <div class="contact-item"><strong>Phone:</strong> 825-365-1570</div>
-            <div class="contact-item"><strong>LinkedIn:</strong> linkedin.com/in/ajwad-tazrif-hussyne-9a09171b9</div>
-            <div class="contact-item"><strong>Location:</strong> Calgary, Alberta</div>
-          </div>
-        </div>
+Electrical Engineering Student • University of Calgary
 
-        <div class="card">
-          <h2 class="section-title">Next Improvements</h2>
-          <ol class="muted">
-            <li>Replace the placeholder GitHub link with your real GitHub profile.</li>
-            <li>Add your resume as <code>resume.pdf</code> in the same folder as this HTML file.</li>
-            <li>Create an <code>images</code> folder and add <code>headshot.jpg</code> if you want a photo.</li>
-            <li>Add project photos, Fusion 360 screenshots, PVsyst results, or oscilloscope captures.</li>
-            <li>Replace the placeholder project buttons with real GitHub, report, or demo links.</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-  </main>
+</div>
 
-  <footer>
-    <div class="container">
-      <p>© <span id="year"></span> Ajwad Tazrif Hussyne. Built as a simple engineering portfolio.</p>
-    </div>
-  </footer>
+<h1>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+Ajwad Tazrif Hussyne
+
+</h1>
+
+<div class="hero-sub">
+
+Embedded Systems • FPGA • Power Systems • Instrumentation
+
+</div>
+
+<p>
+
+Electrical Engineering student interested in embedded systems, renewable energy, FPGA development, instrumentation, and practical engineering applications.
+
+Open to internship and co-op opportunities.
+
+</p>
+
+<div class="button-row">
+
+<a
+href="#projects"
+class="btn btn-primary"
+>
+
+Projects
+
+</a>
+
+<a
+href="resume.pdf"
+class="btn"
+target="_blank"
+>
+
+Resume
+
+</a>
+
+<a
+href="https://github.com/ajwadhussyne"
+class="btn"
+target="_blank"
+>
+
+GitHub
+
+</a>
+
+<a
+href="https://www.linkedin.com/in/ajwad-tazrif-hussyne-9a09171b9/"
+class="btn"
+target="_blank"
+>
+
+LinkedIn
+
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-card">
+
+<div class="hero-photo">
+
+<img
+src="images/headshot.jpg"
+alt="Ajwad"
+>
+
+</div>
+
+<div class="hero-stats">
+
+<div class="stat">
+
+<strong>2028</strong>
+
+Graduation
+
+</div>
+
+<div class="stat">
+
+<strong>1500+</strong>
+
+Students Reached
+
+</div>
+
+<div class="stat">
+
+<strong>4+</strong>
+
+Projects
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<section
+id="about"
+class="section"
+>
+
+<div class="container">
+
+<h2 class="section-title">
+
+About Me
+
+</h2>
+
+<div class="card">
+
+Electrical Engineering student at University of Calgary interested in embedded systems, instrumentation, electrical testing, FPGA hardware, power systems, renewable energy applications, and hands-on engineering development.
+
+Experience includes electrical troubleshooting, oscilloscope measurements, solar PV system design, FPGA implementation, embedded systems development, technical documentation, and STEM outreach.
+
+</div>
+
+</div>
+
+</section>
+
+<section
+id="skills"
+class="section"
+>
+
+<div class="container">
+
+<h2 class="section-title">
+
+Skills
+
+</h2>
+
+<div class="skills">
+
+<div class="skill">SystemVerilog</div>
+
+<div class="skill">MATLAB</div>
+
+<div class="skill">C/C++</div>
+
+<div class="skill">Vivado</div>
+
+<div class="skill">LTSpice</div>
+
+<div class="skill">NI Multisim</div>
+
+<div class="skill">PVsyst</div>
+
+<div class="skill">Fusion 360</div>
+
+<div class="skill">FPGA</div>
+
+<div class="skill">Oscilloscopes</div>
+
+<div class="skill">Instrumentation</div>
+
+<div class="skill">Embedded Systems</div>
+
+<div class="skill">Power Systems</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section
+id="projects"
+class="section"
+>
+
+<div class="container">
+
+<h2 class="section-title">
+
+Projects
+
+</h2>
+
+<div class="projects">
+
+<div class="project">
+
+<h3>
+
+Dual Axis Solar Tracker
+
+</h3>
+
+Arduino based solar tracking system integrating LDR sensors, servo motors, embedded control logic and validation testing.
+
+</div>
+
+<div class="project">
+
+<h3>
+
+Grid Connected Solar PV System
+
+</h3>
+
+6.3kWp residential PV design using PVsyst evaluating inverter sizing and performance.
+
+</div>
+
+<div class="project">
+
+<h3>
+
+Discrete ADC Using FPGA
+
+</h3>
+
+PWM generation, comparator interfacing, SAR logic and oscilloscope validation.
+
+</div>
+
+<div class="project">
+
+<h3>
+
+Obstacle Detection Embedded System
+
+</h3>
+
+Integrated sensors, controllers and actuator logic for embedded reliability improvement.
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section
+id="contact"
+class="section"
+>
+
+<div class="container">
+
+<h2 class="section-title">
+
+Contact
+
+</h2>
+
+<div class="card">
+
+Email:
+hussynea@gmail.com
+
+<br><br>
+
+LinkedIn:
+linkedin.com/in/ajwad-tazrif-hussyne-9a09171b9
+
+<br><br>
+
+Calgary, Alberta
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Ajwad Tazrif Hussyne
+
+</footer>
+
 </body>
+
 </html>
